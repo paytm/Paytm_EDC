@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SampleDeeplinkApp</string>
+    <string name="title_activity_deeplink_v2">DeeplinkV2Activity</string>
+</resources>
