@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">EDC Libraries Demo</string>
+    <string name="clear_request">Clear Request</string>
+    <string name="response">RESPONSE</string>
+    <string name="request">REQUEST</string>
+    <string name="read_card">Read Card</string>
+    <string name="update_card">Update Card</string>
+    <string name="void_payment">Void Payment</string>
+    <string name="check_status">Check Status</string>
+    <string name="do_payment">Do Payment</string>
+    <string name="dash">-</string>
+    <string name="plus">+</string>
+    <string name="value">Value</string>
+    <string name="key">Key</string>
+    <string name="gstinvoicedate">gstInvoiceDate</string>
+    <string name="gstinvoiceno">gstInvoiceNo</string>
+    <string name="gstbrkup">gstBrkUp</string>
+    <string name="gstin">gstIn</string>
+    <string name="subwall">SubWall</string>
+    <string name="optional">Optional</string>
+    <string name="print">Print</string>
+    <string name="extend">Extend</string>
+    <string name="qr">QR</string>
+    <string name="card">CARD</string>
+    <string name="all">ALL</string>
+    <string name="order_id">Order Id</string>
+    <string name="amount_in_paise">Amount in Paise</string>
+    <string name="enter_card_manufacture_type">Enter Card Manufacture Type</string>
+    <string name="enter_card_block_number">Enter Card Block Number</string>
+    <string name="enter_card_data">Enter Write Card Data</string>
+</resources>
