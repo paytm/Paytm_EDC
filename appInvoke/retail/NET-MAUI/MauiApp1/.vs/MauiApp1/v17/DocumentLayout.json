@@ -1,0 +1,173 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ananda1.kumar\\source\\repos\\MauiApp1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9FC2B59F-89C2-464B-A3D0-1B6FBAC3030C}|MauiApp1\\MauiApp1.csproj|c:\\users\\ananda1.kumar\\source\\repos\\mauiapp1\\mauiapp1\\mauiapp1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9FC2B59F-89C2-464B-A3D0-1B6FBAC3030C}|MauiApp1\\MauiApp1.csproj|solutionrelative:mauiapp1\\mauiapp1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FC2B59F-89C2-464B-A3D0-1B6FBAC3030C}|MauiApp1\\MauiApp1.csproj|c:\\users\\ananda1.kumar\\source\\repos\\mauiapp1\\mauiapp1\\platforms\\android\\mainactivity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FC2B59F-89C2-464B-A3D0-1B6FBAC3030C}|MauiApp1\\MauiApp1.csproj|solutionrelative:mauiapp1\\platforms\\android\\mainactivity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{275518EF-483E-4A7E-B09C-54BFABB82621}|PrinterSDKRelease\\PrinterSDKRelease.csproj|c:\\users\\ananda1.kumar\\source\\repos\\mauiapp1\\printersdkrelease\\printersdkrelease.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{275518EF-483E-4A7E-B09C-54BFABB82621}|PrinterSDKRelease\\PrinterSDKRelease.csproj|solutionrelative:printersdkrelease\\printersdkrelease.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53F5CA2D-3025-444A-ADED-C42C2EEBEFA9}|PrinterSDKDebug\\PrinterSDKDebug.csproj|c:\\users\\ananda1.kumar\\source\\repos\\mauiapp1\\printersdkdebug\\printersdkdebug.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{53F5CA2D-3025-444A-ADED-C42C2EEBEFA9}|PrinterSDKDebug\\PrinterSDKDebug.csproj|solutionrelative:printersdkdebug\\printersdkdebug.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{039EC464-BB7F-4F11-8880-7199225CF530}|AppInvokeRelease\\AppInvokeRelease.csproj|c:\\users\\ananda1.kumar\\source\\repos\\mauiapp1\\appinvokerelease\\appinvokerelease.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{039EC464-BB7F-4F11-8880-7199225CF530}|AppInvokeRelease\\AppInvokeRelease.csproj|solutionrelative:appinvokerelease\\appinvokerelease.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FC2B59F-89C2-464B-A3D0-1B6FBAC3030C}|MauiApp1\\MauiApp1.csproj|c:\\users\\ananda1.kumar\\source\\repos\\mauiapp1\\mauiapp1\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FC2B59F-89C2-464B-A3D0-1B6FBAC3030C}|MauiApp1\\MauiApp1.csproj|solutionrelative:mauiapp1\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FC2B59F-89C2-464B-A3D0-1B6FBAC3030C}|MauiApp1\\MauiApp1.csproj|c:\\users\\ananda1.kumar\\source\\repos\\mauiapp1\\mauiapp1\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FC2B59F-89C2-464B-A3D0-1B6FBAC3030C}|MauiApp1\\MauiApp1.csproj|solutionrelative:mauiapp1\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FC2B59F-89C2-464B-A3D0-1B6FBAC3030C}|MauiApp1\\MauiApp1.csproj|c:\\users\\ananda1.kumar\\source\\repos\\mauiapp1\\mauiapp1\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FC2B59F-89C2-464B-A3D0-1B6FBAC3030C}|MauiApp1\\MauiApp1.csproj|solutionrelative:mauiapp1\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FC2B59F-89C2-464B-A3D0-1B6FBAC3030C}|MauiApp1\\MauiApp1.csproj|c:\\users\\ananda1.kumar\\source\\repos\\mauiapp1\\mauiapp1\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9FC2B59F-89C2-464B-A3D0-1B6FBAC3030C}|MauiApp1\\MauiApp1.csproj|solutionrelative:mauiapp1\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{9b96d899-3214-4b6f-a8b9-182d4bc2f76f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PrinterSDKDebug.csproj",
+              "DocumentMoniker": "C:\\Users\\ananda1.kumar\\source\\repos\\MauiApp1\\PrinterSDKDebug\\PrinterSDKDebug.csproj",
+              "RelativeDocumentMoniker": "PrinterSDKDebug\\PrinterSDKDebug.csproj",
+              "ToolTip": "C:\\Users\\ananda1.kumar\\source\\repos\\MauiApp1\\PrinterSDKDebug\\PrinterSDKDebug.csproj",
+              "RelativeToolTip": "PrinterSDKDebug\\PrinterSDKDebug.csproj",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-17T11:08:53.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PrinterSDKRelease.csproj",
+              "DocumentMoniker": "C:\\Users\\ananda1.kumar\\source\\repos\\MauiApp1\\PrinterSDKRelease\\PrinterSDKRelease.csproj",
+              "RelativeDocumentMoniker": "PrinterSDKRelease\\PrinterSDKRelease.csproj",
+              "ToolTip": "C:\\Users\\ananda1.kumar\\source\\repos\\MauiApp1\\PrinterSDKRelease\\PrinterSDKRelease.csproj",
+              "RelativeToolTip": "PrinterSDKRelease\\PrinterSDKRelease.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-17T11:08:40.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ananda1.kumar\\source\\repos\\MauiApp1\\MauiApp1\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "MauiApp1\\MainPage.xaml.cs",
+              "ToolTip": "C:\\Users\\ananda1.kumar\\source\\repos\\MauiApp1\\MauiApp1\\MainPage.xaml.cs",
+              "RelativeToolTip": "MauiApp1\\MainPage.xaml.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAwwDwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T09:47:05.56Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AppShell.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ananda1.kumar\\source\\repos\\MauiApp1\\MauiApp1\\AppShell.xaml.cs",
+              "RelativeDocumentMoniker": "MauiApp1\\AppShell.xaml.cs",
+              "ToolTip": "C:\\Users\\ananda1.kumar\\source\\repos\\MauiApp1\\MauiApp1\\AppShell.xaml.cs",
+              "RelativeToolTip": "MauiApp1\\AppShell.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T09:47:02.364Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainActivity.cs",
+              "DocumentMoniker": "C:\\Users\\ananda1.kumar\\source\\repos\\MauiApp1\\MauiApp1\\Platforms\\Android\\MainActivity.cs",
+              "RelativeDocumentMoniker": "MauiApp1\\Platforms\\Android\\MainActivity.cs",
+              "ToolTip": "C:\\Users\\ananda1.kumar\\source\\repos\\MauiApp1\\MauiApp1\\Platforms\\Android\\MainActivity.cs",
+              "RelativeToolTip": "MauiApp1\\Platforms\\Android\\MainActivity.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAewC0AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T09:44:54.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MauiApp1.csproj",
+              "DocumentMoniker": "C:\\Users\\ananda1.kumar\\source\\repos\\MauiApp1\\MauiApp1\\MauiApp1.csproj",
+              "RelativeDocumentMoniker": "MauiApp1\\MauiApp1.csproj",
+              "ToolTip": "C:\\Users\\ananda1.kumar\\source\\repos\\MauiApp1\\MauiApp1\\MauiApp1.csproj",
+              "RelativeToolTip": "MauiApp1\\MauiApp1.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-17T09:39:03.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AppInvokeRelease.csproj",
+              "DocumentMoniker": "C:\\Users\\ananda1.kumar\\source\\repos\\MauiApp1\\AppInvokeRelease\\AppInvokeRelease.csproj",
+              "RelativeDocumentMoniker": "AppInvokeRelease\\AppInvokeRelease.csproj",
+              "ToolTip": "C:\\Users\\ananda1.kumar\\source\\repos\\MauiApp1\\AppInvokeRelease\\AppInvokeRelease.csproj",
+              "RelativeToolTip": "AppInvokeRelease\\AppInvokeRelease.csproj",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-17T11:09:27.324Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ananda1.kumar\\source\\repos\\MauiApp1\\MauiApp1\\App.xaml.cs",
+              "RelativeDocumentMoniker": "MauiApp1\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\ananda1.kumar\\source\\repos\\MauiApp1\\MauiApp1\\App.xaml.cs",
+              "RelativeToolTip": "MauiApp1\\App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T09:46:55.606Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\ananda1.kumar\\source\\repos\\MauiApp1\\MauiApp1\\MainPage.xaml",
+              "RelativeDocumentMoniker": "MauiApp1\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\ananda1.kumar\\source\\repos\\MauiApp1\\MauiApp1\\MainPage.xaml",
+              "RelativeToolTip": "MauiApp1\\MainPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-17T09:45:51.718Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
