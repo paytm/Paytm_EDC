@@ -1,0 +1,20 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.paytm.ecr.bluetooth.sdk"
+4    android:versionCode="4"
+5    android:versionName="1.0.3" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/Users/anandakumar/StudioProjects/edc-android-bluetooth-ecr-sdk/ecrSDK/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->/Users/anandakumar/StudioProjects/edc-android-bluetooth-ecr-sdk/ecrSDK/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.BLUETOOTH" />
+11-->/Users/anandakumar/StudioProjects/edc-android-bluetooth-ecr-sdk/ecrSDK/src/main/AndroidManifest.xml:5:5-68
+11-->/Users/anandakumar/StudioProjects/edc-android-bluetooth-ecr-sdk/ecrSDK/src/main/AndroidManifest.xml:5:22-65
+12    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+12-->/Users/anandakumar/StudioProjects/edc-android-bluetooth-ecr-sdk/ecrSDK/src/main/AndroidManifest.xml:6:5-74
+12-->/Users/anandakumar/StudioProjects/edc-android-bluetooth-ecr-sdk/ecrSDK/src/main/AndroidManifest.xml:6:22-71
+13
+14</manifest>
