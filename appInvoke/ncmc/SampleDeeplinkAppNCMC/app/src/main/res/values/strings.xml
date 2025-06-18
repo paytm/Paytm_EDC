@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SampleDeeplinkApp</string>
+    <string name="title_activity_deeplink_v2">Deeplink_V2</string>
+    <string name="title_activity_deeplink_v1">DeeplinkV_V1</string>
+    <string name="title_activity_qsparc">Deeplink_QSPARC</string>
+    <string name="title_activity_transit">Deeplink_Transit</string>
+</resources>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="20">
+            
+            
+            <Button x:Name="PrintButton"
+                Text="Print"
+                Clicked="OnPrintClicked"
+                Margin="0,20,0,0"
+                SemanticProperties.Hint="Print sample data"/>
+
+            <Entry x:Name="AmountEntry" 
+                   Placeholder="Enter Amount"
+                   Keyboard="Numeric"
+                   Margin="0,10,0,0"/>
+
+            <Entry x:Name="OrderIdEntry" 
+                   Placeholder="Enter Order ID"
+                   Margin="0,10,0,0"/>
+
+            <Entry x:Name="PayModeEntry" 
+                   Placeholder="Enter Pay Mode"
+                   Margin="0,10,0,0"/>
+
+            <Button x:Name="SubmitButton"
+                    Text="Submit"
+                    Clicked="OnSubmitClicked"
+                    Margin="0,20,0,0"
+                    SemanticProperties.Hint="Submits the form data"/>
+
+            <Label x:Name="PaymentResultLabel"
+                   Text=""
+                   Margin="0,10,0,0"
+                   LineBreakMode="WordWrap"/>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,69 @@
+{
+    "ConnectionCheck": {
+        "port_name": "/dev/tty.usbmodem14900005082",
+        "baud_rate": 115200,
+        "parity": 0,
+        "databits": 8,
+        "stopbit": 1,
+        "debugmode": 1
+    },
+    "Sale": {
+        "port_name": "/dev/tty.usbmodem14900005082",
+        "baud_rate": 115200,
+        "parity": 0,
+        "databits": 8,
+        "stopbit": 1,
+        "debugmode": 1,
+        "merchant_id": "umlNXS99704902410046",
+        "order_id": "149",
+        "payment_mode": "QR",
+        "amount": "100",
+        "sub_wallet_info": "",
+        "extend_info": "",
+        "print_info": "printInfo://values?merchantTxnId=82938938983&caNumber=34567777&billNumber=xyz123",
+        "gst_information": "",
+        "card_read_mode": ""
+    },
+    "Status": {
+        "port_name": "/dev/tty.usbmodem14900005082",
+        "baud_rate": 115200,
+        "parity": 0,
+        "databits": 8,
+        "stopbit": 1,
+        "debugmode": 1,
+        "merchant_id": "umlNXS99704902410046",
+        "order_id": "141"
+    },
+    "Void": {
+        "port_name": "/dev/tty.usbmodem14900005082",
+        "baud_rate": 115200,
+        "parity": 0,
+        "databits": 8,
+        "stopbit": 1,
+        "debugmode": 1,
+        "merchant_id": "umlNXS99704902410046",
+        "order_id": "141",
+        "extend_info": "extendInfo://values?xyz=123",
+        "print_info" : "printInfo://values?xyz=123&abc=345"
+    },
+    "Cancel": {
+        "port_name": "/dev/tty.usbmodem14900005082",
+        "baud_rate": 115200,
+        "parity": 0,
+        "databits": 8,
+        "stopbit": 1,
+        "debugmode": 1,
+        "merchant_id": "umlNXS99704902410046",
+        "order_id": "141"
+    },
+    "PrintReceipt": {
+        "port_name": "/dev/tty.usbmodem14900005082",
+        "baud_rate": 115200,
+        "parity": 0,
+        "databits": 8,
+        "stopbit": 1,
+        "debugmode": 1,
+        "merchant_id": "umlNXS99704902410046",
+        "order_id": "141"
+    }
+}

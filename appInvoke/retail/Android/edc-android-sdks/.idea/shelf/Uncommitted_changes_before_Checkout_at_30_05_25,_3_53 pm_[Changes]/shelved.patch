@@ -1,0 +1,15 @@
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>*.iml\n.gradle\n/local.properties\n/.idea/caches\n/.idea/libraries\n/.idea/modules.xml\n/.idea/workspace.xml\n/.idea/navEditor.xml\n/.idea/assetWizardSettings.xml\n.DS_Store\n/build\n/captures\n.externalNativeBuild\n.cxx\nlocal.properties\n/.idea/compiler.xml\n/.idea/misc.xml\n/.idea/gradle.xml\n.idea/misc.xml\n.idea/gradle.xml\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.gitignore b/.gitignore
+--- a/.gitignore	(revision 8f6cbd4408d528d6c7c230af0446a892eea7be8e)
++++ b/.gitignore	(date 1748584054170)
+@@ -18,3 +18,4 @@
+ /.idea/gradle.xml
+ .idea/misc.xml
+ .idea/gradle.xml
++/.idea

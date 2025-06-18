@@ -1,0 +1,10 @@
+{
+    "StatusCheckOnSaleRequestEnabled": true,
+    "ReadWriteOnTerminalTimeout": 6,
+    "SaleRequestTimeout": 180,
+    "SaleAckStatusCode": ["001", "1100", "1101", "1103"],
+    "StatusCheckStart": 10,
+    "StatusCheckInterval": 5,
+    "TransactionPendingStatusCodes": ["103", "1100", "1101", "1103"],
+    "DeviceInstances": ["VID:PID=2FB8:2205","VID:PID=1234:0101","VID:PID=2FB8:2466", "VID:PID=2FB8:246E","VID:PID=05C6:9027","VID:PID=26F1:57D4"]
+}
