@@ -18,7 +18,7 @@
     -->
   </PropertyGroup>
 	<ItemGroup>
-		<AndroidLibrary Include="Jars\paytm-app-invoke-sdk-release-v1.0.18.aar">
+		<AndroidLibrary Include="Jars\paytm-app-invoke-sdk-release-v1.0.19.aar">
 			<EmbeddedJar>true</EmbeddedJar>
 		</AndroidLibrary>
 	</ItemGroup>
