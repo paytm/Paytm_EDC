@@ -40,5 +40,16 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/qsparc" />
 
+    <Button
+        android:id="@+id/printer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:onClick="printer"
+        android:text="Printer"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/transit" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

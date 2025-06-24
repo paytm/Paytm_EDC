@@ -1,14 +1,15 @@
 plugins {
     id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
 }
 
 android {
-    compileSdkVersion 31
+    compileSdk 33
     
     defaultConfig {
         applicationId "com.paytm.sampledeeplinkapp"
-        minSdkVersion 14
-        targetSdkVersion 31
+        minSdk 22
+        targetSdk 33
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -25,10 +26,16 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    namespace 'com.paytm.sampledeeplinkapp'
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.core:core-ktx:1.10.1'
+    debugImplementation fileTree(include: ['*.aar'], dir: 'libs/debug')
+    releaseImplementation fileTree(include: ['*.aar'], dir: 'libs/release')
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
