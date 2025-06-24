@@ -37,4 +37,8 @@ public class LandingActivity extends BaseActivity {
     public void transit(View view) {
         startActivity(new Intent(this, TransitActivity.class));
     }
+
+    public void printer(View view) {
+        startActivity(new Intent(this, PrinterActivity.class));
+    }
 }

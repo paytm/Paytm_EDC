@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".PrinterActivity">
+
+    <Button
+        android:id="@+id/btn_generate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Generate"
+        android:layout_margin="8dp"
+        app:layout_constraintEnd_toStartOf="@id/btn_print"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_print"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Print"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toEndOf="@id/btn_generate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_generate_and_print" />
+
+    <Button
+        android:id="@+id/btn_generate_and_print"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Generate &amp; Print"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toEndOf="@id/btn_print"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btn_generate_and_print_on_background"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Generate &amp; Print on Background"
+        app:layout_constraintBottom_toTopOf="@id/btn_generate_and_print"
+        app:layout_constraintEnd_toStartOf="@id/btn_print_on_background"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_print_on_background"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Print on Background"
+        app:layout_constraintBottom_toTopOf="@id/btn_generate_and_print"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_generate_and_print_on_background" />
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxHeight="300dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_all_in_one_pos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/log"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_generate"
+        app:layout_constraintVertical_bias="0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
