@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.paytm.androidecrsdk.AndroidECRSdk-merged_res-5:/layout/notification_template_part_chronometer.xml",
+        "source": "com.paytm.androidecrsdk.AndroidECRSdk-core-1.2.0-0:/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "com.paytm.androidecrsdk.AndroidECRSdk-merged_res-5:/layout/custom_dialog.xml",
+        "source": "com.paytm.androidecrsdk.AndroidECRSdk-core-1.2.0-0:/layout/custom_dialog.xml"
+    },
+    {
+        "merged": "com.paytm.androidecrsdk.AndroidECRSdk-merged_res-5:/layout/notification_template_part_time.xml",
+        "source": "com.paytm.androidecrsdk.AndroidECRSdk-core-1.2.0-0:/layout/notification_template_part_time.xml"
+    }
+]

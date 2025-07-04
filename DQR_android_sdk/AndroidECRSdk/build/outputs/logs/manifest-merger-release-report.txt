@@ -1,0 +1,39 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/src/main/AndroidManifest.xml:2:1-11:12
+INJECTED from /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/src/main/AndroidManifest.xml:2:1-11:12
+INJECTED from /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/src/main/AndroidManifest.xml:2:1-11:12
+	package
+		ADDED from /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/src/main/AndroidManifest.xml:3:5-38
+		INJECTED from /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/src/main/AndroidManifest.xml
+		INJECTED from /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/src/main/AndroidManifest.xml:2:11-69
+uses-feature#android.hardware.usb.host
+ADDED from /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/src/main/AndroidManifest.xml:5:5-62
+	android:name
+		ADDED from /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/src/main/AndroidManifest.xml:5:19-59
+uses-feature#android.permission.MANAGE_USB
+ADDED from /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/src/main/AndroidManifest.xml:6:5-8:47
+	android:protectionLevel
+		ADDED from /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/src/main/AndroidManifest.xml:8:9-44
+	android:name
+		ADDED from /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/src/main/AndroidManifest.xml:7:9-53
+uses-permission#android.permission.USB_PERMISSION
+ADDED from /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/src/main/AndroidManifest.xml:10:5-73
+	android:name
+		ADDED from /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/src/main/AndroidManifest.xml:10:22-70
+uses-sdk
+INJECTED from /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/src/main/AndroidManifest.xml
+INJECTED from /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/src/main/AndroidManifest.xml
+INJECTED from /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/src/main/AndroidManifest.xml
+INJECTED from /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/src/main/AndroidManifest.xml
+		ADDED from /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/src/main/AndroidManifest.xml
+		INJECTED from /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/src/main/AndroidManifest.xml
+		ADDED from /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/src/main/AndroidManifest.xml
+		INJECTED from /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/src/main/AndroidManifest.xml

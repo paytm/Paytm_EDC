@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.paytm.androidecrsdk" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="32" />
+
+    <uses-feature android:name="android.hardware.usb.host" />
+    <uses-feature
+        android:name="android.permission.MANAGE_USB"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="android.permission.USB_PERMISSION" />
+
+</manifest>

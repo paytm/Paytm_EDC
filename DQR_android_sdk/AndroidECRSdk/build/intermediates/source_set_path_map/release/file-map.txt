@@ -1,0 +1,9 @@
+com.paytm.androidecrsdk.AndroidECRSdk-core-1.2.0-0 /Users/anandakumar/.gradle/caches/transforms-3/e4dff90f867f74a28f019bcab45412eb/transformed/core-1.2.0/res
+com.paytm.androidecrsdk.AndroidECRSdk-pngs-1 /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/build/generated/res/pngs/release
+com.paytm.androidecrsdk.AndroidECRSdk-resValues-2 /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/build/generated/res/resValues/release
+com.paytm.androidecrsdk.AndroidECRSdk-rs-3 /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/build/generated/res/rs/release
+com.paytm.androidecrsdk.AndroidECRSdk-mergeReleaseResources-4 /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/build/intermediates/incremental/release/mergeReleaseResources/merged.dir
+com.paytm.androidecrsdk.AndroidECRSdk-mergeReleaseResources-5 /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/build/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+com.paytm.androidecrsdk.AndroidECRSdk-merged_res-6 /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/build/intermediates/merged_res/release
+com.paytm.androidecrsdk.AndroidECRSdk-main-7 /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/src/main/res
+com.paytm.androidecrsdk.AndroidECRSdk-release-8 /Users/anandakumar/ECR_Projects/edc-wired-ecr-android-to-android-sdk/AndroidECRSdk/src/release/res
