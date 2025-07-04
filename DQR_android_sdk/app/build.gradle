@@ -1,0 +1,60 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android-extensions'
+}
+def debugKeyStorePath = System.getenv("HOME") + "/.android/debug.keystore"
+
+android {
+    signingConfigs {
+        debug {
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+            storeFile file(debugKeyStorePath)
+            storePassword "android"
+        }
+        release {
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+            storeFile file(debugKeyStorePath)
+            storePassword "android"
+        }
+    }
+    compileSdk versions.compileSdk
+    defaultConfig {
+        applicationId "com.paytm.edc.dqr.android.sample"
+        minSdk versions.minSdk
+        targetSdk versions.targetSdk
+        versionCode versions.code
+        versionName versions.name
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.debug
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.aar'])
+    implementation deps.gson
+    implementation deps.core_ktx
+    implementation deps.appcompat
+    implementation deps.material
+    implementation deps.constarint
+    implementation deps.zxing
+    testImplementation deps.junit
+    androidTestImplementation deps.junit_ext
+    androidTestImplementation deps.espresso_core
+}

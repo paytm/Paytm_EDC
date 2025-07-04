@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Paytm DQR Controller</string>
+    <string name="connect">Connect</string>
+    <string name="display_home">Display Home</string>
+    <string name="pay_paytmqr">pay://paytmqr</string>
+    <string name="display_qr">Display QR</string>
+    <string name="display_success">Display Success</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="amount">amount</string>
+    <string name="amount_in_paise">Amount In Paise</string>
+</resources>

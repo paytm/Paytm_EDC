@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.paytm.androidecrsdk.AndroidECRSdk-mergeReleaseResources-3:/values-hu/values-hu.xml",
+            "map": [
+                {
+                    "source": "/Users/anandakumar/.gradle/caches/transforms-3/e4dff90f867f74a28f019bcab45412eb/transformed/core-1.2.0/res/values-hu/values-hu.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.paytm.androidecrsdk.AndroidECRSdk-merged_res-5:/values-hu/values-hu.xml",
+            "map": [
+                {
+                    "source": "/Users/anandakumar/.gradle/caches/transforms-3/e4dff90f867f74a28f019bcab45412eb/transformed/core-1.2.0/res/values-hu/values-hu.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        }
+    ]
+}
