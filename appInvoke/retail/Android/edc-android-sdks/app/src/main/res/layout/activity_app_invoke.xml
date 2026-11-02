@@ -236,7 +236,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:hint="@string/key"
-            app:layout_constraintBottom_toTopOf="@id/btn_payment"
+            app:layout_constraintBottom_toTopOf="@id/eofChk"
             app:layout_constraintEnd_toStartOf="@id/value"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/rdGst" />
@@ -247,7 +247,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:hint="@string/value"
-            app:layout_constraintBottom_toTopOf="@id/btn_payment"
+            app:layout_constraintBottom_toTopOf="@id/eofChk"
             app:layout_constraintEnd_toStartOf="@id/add"
             app:layout_constraintStart_toEndOf="@id/key"
             app:layout_constraintTop_toBottomOf="@id/rdGst" />
@@ -258,7 +258,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:text="@string/plus"
-            app:layout_constraintBottom_toTopOf="@id/btn_payment"
+            app:layout_constraintBottom_toTopOf="@id/eofChk"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@id/remove"
             app:layout_constraintStart_toEndOf="@id/value"
@@ -270,13 +270,46 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:text="@string/dash"
-            app:layout_constraintBottom_toTopOf="@id/btn_payment"
+            app:layout_constraintBottom_toTopOf="@id/eofChk"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/add"
             app:layout_constraintTop_toBottomOf="@id/rdGst" />
 
-        <Button
+
+        <CheckBox
+            android:id="@+id/eofChk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="@string/last_command"
+            app:layout_constraintBottom_toTopOf="@id/actionGridScroll"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/keyGst"
+            />
+        <HorizontalScrollView
+            android:id="@+id/actionGridScroll"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fillViewport="true"
+            android:scrollbars="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eofChk">
+        <GridLayout
+            android:id="@+id/actionGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:alignmentMode="alignMargins"
+            android:columnCount="2"
+            android:useDefaultMargins="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eofChk">
+
+            <Button
             android:id="@+id/btn_payment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -285,7 +318,7 @@
             app:layout_constraintBottom_toTopOf="@id/btn_status"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/keyGst" />
+            app:layout_constraintTop_toBottomOf="@id/eofChk" />
 
         <Button
             android:id="@+id/btn_status"
@@ -293,10 +326,11 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:text="@string/check_status"
-            app:layout_constraintBottom_toTopOf="@id/btn_void"
+            app:layout_constraintBottom_toTopOf="@id/tv_request"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_payment" />
+
 
         <Button
             android:id="@+id/btn_void"
@@ -326,11 +360,101 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:text="@string/update_card"
-            app:layout_constraintBottom_toTopOf="@id/tv_request"
+            app:layout_constraintBottom_toTopOf="@id/btn_updateCardKey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_readCard" />
 
+        <Button
+            android:id="@+id/btn_updateCardKey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="@string/update_card_key"
+            app:layout_constraintBottom_toTopOf="@id/btn_readCardAsync"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_updateCard" />
+
+        <Button
+            android:id="@+id/btn_readCardAsync"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/read_card_async"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_updateCardAsync"
+            app:layout_constraintTop_toBottomOf="@id/btn_updateCardKey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <Button
+            android:id="@+id/btn_updateCardAsync"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/update_card_async"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_transmitApdu"
+            app:layout_constraintTop_toBottomOf="@id/btn_readCardAsync"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <Button
+            android:id="@+id/btn_transmitApdu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/transmit_apdu_async"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_cancelRequest"
+            app:layout_constraintTop_toBottomOf="@id/btn_updateCardAsync"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <Button
+            android:id="@+id/btn_cancelRequest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel_async_request"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_partialRefund"
+            app:layout_constraintTop_toBottomOf="@id/btn_transmitApdu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <Button
+            android:id="@+id/btn_partialRefund"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Partial Refund"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_send_sms"
+            app:layout_constraintTop_toBottomOf="@+id/btn_cancelRequest"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <Button
+            android:id="@+id/btn_send_sms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send SMS"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_pre_auth"
+            app:layout_constraintTop_toBottomOf="@id/btn_partialRefund"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <Button
+            android:id="@+id/btn_pre_auth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pre_auth"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_request"
+            app:layout_constraintTop_toBottomOf="@id/btn_send_sms"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        </GridLayout>
+        </HorizontalScrollView>
         <TextView
             android:id="@+id/tv_request"
             android:layout_width="match_parent"
@@ -340,7 +464,7 @@
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_updateCard" />
+            app:layout_constraintTop_toBottomOf="@id/actionGridScroll" />
 
         <TextView
             android:id="@+id/tv_response"

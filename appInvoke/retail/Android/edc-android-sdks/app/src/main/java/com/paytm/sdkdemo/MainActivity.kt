@@ -15,5 +15,8 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.printer).setOnClickListener {
             startActivity(Intent(this, PrinterActivity::class.java))
         }
+        findViewById<Button>(R.id.ncmc_app_invoke).setOnClickListener {
+            startActivity(Intent(this, NCMCAppInvokeActivity::class.java))
+        }
     }
 }

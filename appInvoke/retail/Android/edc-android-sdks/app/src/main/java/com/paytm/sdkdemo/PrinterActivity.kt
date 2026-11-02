@@ -2,18 +2,19 @@ package com.paytm.sdkdemo
 
 import android.graphics.Bitmap
 import android.graphics.Canvas
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.paytm.pos.printdemo.BitmapGeneratorDemo
 import com.paytm.printgenerator.BitmapReceiverCallback
 import com.paytm.printgenerator.printer.PrintStatusCallBack
 import com.paytm.printgenerator.printer.PrintStatusEnum
 import com.paytm.printgenerator.printer.Printer
+import com.paytm.printgenerator.printer.PrinterStatusCallBack
 import com.paytm.printgenerator.utils.PrinterUtils
 
 class PrinterActivity : AppCompatActivity() {
@@ -46,11 +47,11 @@ class PrinterActivity : AppCompatActivity() {
         val callback = object : PrintStatusCallBack {
             override fun onFailure(id: String, status: PrintStatusEnum) {
                 addLogText("Printing Failed : $id")
-                addLogText("Message : $status")
+                addLogText( "Message : $status")
             }
 
             override fun onPrintStarted(id: String) {
-                addLogText("File : $id, Printing Started")
+                addLogText("Print Started : $id")
             }
 
             override fun onSuccess(id: String) {
@@ -58,8 +59,22 @@ class PrinterActivity : AppCompatActivity() {
             }
         }
 
+        // Shows how a consuming app reads printer status before starting a journey that must
+        // produce a paper receipt. SUCCESS means the printer can accept a job now.
+        val statusCallback = object : PrinterStatusCallBack {
+            override fun onStatus(status: PrintStatusEnum) {
+                addLogText("Printer Status : $status")
+                addLogText("Message : ${status.getMessage()}")
+            }
+        }
+
+        findViewById<Button>(R.id.btn_printer_status).setOnClickListener {
+            addLogText("Reading printer status...")
+            Printer.getPrinterStatus(this, statusCallback)
+        }
+
         findViewById<Button>(R.id.btn_generate).setOnClickListener {
-            val page = BitmapGeneratorDemoJava.getDemoPage(this)
+            val page = BitmapGeneratorDemo.getDemoPage(ic)
             Printer.generateBitmapAsync(page, object : BitmapReceiverCallback {
                 override fun onFailure(message: String) {
                     addLogText("Bitmap Generation Failed : $message")
@@ -74,48 +89,25 @@ class PrinterActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.btn_print).setOnClickListener {
-            if (bitmap != null) {
-                addLogText("Thread Name: ${Thread.currentThread().name} , ${Thread.currentThread().id}")
-                Printer.print(bitmap!!, "temp" + getRandomString(5), this, callback)
-            } else
+            if (bitmap != null)
+                Printer.print(bitmap!!, "temp" + getRandomString(5),this, callback)
+            else
                 addLogText("Bitmap is null.")
         }
 
         findViewById<Button>(R.id.btn_generate_and_print).setOnClickListener {
-            addLogText("Thread Name: ${Thread.currentThread().name} , ${Thread.currentThread().id}")
             val page = BitmapGeneratorDemo.getDemoPage(ic)
-            Printer.print(page, "temp" + getRandomString(5), this, callback)
+            Printer.print(page, "temp" + getRandomString(5),this, callback)
         }
-
-        findViewById<Button>(R.id.btn_generate_and_print_on_background).setOnClickListener {
-            Thread {
-                addLogText("Thread Name: ${Thread.currentThread().name} , ${Thread.currentThread().id}")
-                val page = BitmapGeneratorDemo.getDemoPage(ic)
-                Printer.printInBackground(page, "temp" + getRandomString(5), this, callback)
-            }.start()
-        }
-
-        findViewById<Button>(R.id.btn_print_on_background).setOnClickListener {
-            Thread {
-                if (bitmap != null) {
-                    addLogText("Thread Name: ${Thread.currentThread().name} , ${Thread.currentThread().id}")
-                    Printer.printInBackground(bitmap!!, "temp" + getRandomString(5), this, callback)
-                } else
-                    addLogText("Bitmap is null.")
-            }.start()
-        }
-
     }
 
     private fun addLogText(text: String) {
         Log.d("Printing Test", text)
-        runOnUiThread {
-            val temp = log.text.toString() + text + "\n"
-            log.text = temp
-        }
+        val temp = log.text.toString() + text + "\n"
+        log.text = temp
     }
 
-    private fun getRandomString(length: Int): String {
+    fun getRandomString(length: Int) : String {
         val allowedChars = ('A'..'Z') + ('a'..'z') + ('0'..'9')
         return (1..length)
             .map { allowedChars.random() }

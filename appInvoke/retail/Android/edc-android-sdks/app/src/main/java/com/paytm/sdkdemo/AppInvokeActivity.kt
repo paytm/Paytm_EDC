@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
@@ -34,16 +35,32 @@ class AppInvokeActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var btnVoid: Button
     private lateinit var btnReadCard: Button
     private lateinit var btnUpdateCard: Button
+    private lateinit var btnSetSectorTrailerKey: Button
+    private lateinit var btnReadCardAsync: Button
+    private lateinit var btnUpdateCardAsync: Button
+    private lateinit var btntransmitApdu: Button
+    private lateinit var btnCancelRequest: Button
     private lateinit var tvRequest: TextView
     private lateinit var tvResponse: TextView
     private lateinit var btnReset: Button
-
+    private lateinit var eofChk: CheckBox
+    private lateinit var btnPartialRefund: Button
+    private lateinit var btnSendSMS: Button
+    private lateinit var btnPreAuth: Button
 
     private val payment = R.id.btn_payment
     private val status = R.id.btn_status
     private val void = R.id.btn_void
     private val readCard = R.id.btn_readCard
+    private val readCardAsync = R.id.btn_readCardAsync
     private val updateCard = R.id.btn_updateCard
+    private val updateCardKey = R.id.btn_updateCardKey
+    private val updateCardAsync = R.id.btn_updateCardAsync
+    private val transmitApdu = R.id.btn_transmitApdu
+    private val cancelRequest = R.id.btn_cancelRequest
+    private val partialRefund = R.id.btn_partialRefund
+    private val sendSMS = R.id.btn_send_sms
+    private val preAuth = R.id.btn_pre_auth
     private val add = R.id.add
     private val remove = R.id.remove
     private val addGst = R.id.addGst
@@ -53,6 +70,7 @@ class AppInvokeActivity : AppCompatActivity(), View.OnClickListener {
     private var selectedPaymode = "ALL"
     private var selectedMap = "Extend"
     private var selectedGst = "gstIn"
+    private var isEof = false
 
     private val extendInfoMap = HashMap<String, String>()
     private val printInfoMap = HashMap<String, String>()
@@ -62,10 +80,17 @@ class AppInvokeActivity : AppCompatActivity(), View.OnClickListener {
     private var gstIn: String? = null
     private var gstInvoiceDate: String? = null
     private var gstInvoiceNo: String? = null
+    private var startTime: Long = 0
+
+    /** requestId of the most recent async (AIDL) request, used as the target of [cancelAsyncRequest]. */
+    private var lastAsyncRequestId: Int = 0
 
     private val paytmResponseListener = object : PaytmPayments.IPaytmResult {
         override fun onResult(requestId: Int, responseData: Map<String, String>) {
+            val time = "${System.currentTimeMillis() - startTime}ms"
+            startTime = System.currentTimeMillis()
             val message = "RESPONSE\n" +
+                    "Time : $time \n" +
                     "onResult -> \n" +
                     "Code : $requestId \n" +
                     "Data : $responseData"
@@ -73,8 +98,26 @@ class AppInvokeActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         override fun onError(requestId: Int, errorMsg: String) {
+            val time = "${System.currentTimeMillis() - startTime}ms"
+            startTime = System.currentTimeMillis()
             val message = "RESPONSE\n" +
+                    "Time : $time \n" +
                     "onError -> \n$requestId : $errorMsg"
+            tvResponse.text = message
+        }
+    }
+
+    private val cancelResultListener = object : PaytmPayments.IPaytmCancelResult {
+        override fun onCancelResult(requestId: Int, cancelled: Boolean, errorCode: Int, errorMsg: String) {
+            val time = "${System.currentTimeMillis() - startTime}ms"
+            startTime = System.currentTimeMillis()
+            val message = "RESPONSE\n" +
+                    "Time : $time \n" +
+                    "onCancelResult -> \n" +
+                    "RequestId : $requestId \n" +
+                    "Cancelled : $cancelled \n" +
+                    "ErrorCode : $errorCode \n" +
+                    "ErrorMsg : $errorMsg"
             tvResponse.text = message
         }
     }
@@ -108,10 +151,19 @@ class AppInvokeActivity : AppCompatActivity(), View.OnClickListener {
         btnStatus = findViewById(status)
         btnVoid = findViewById(void)
         btnReadCard = findViewById(readCard)
+        btnReadCardAsync = findViewById(R.id.btn_readCardAsync)
+        btnUpdateCardAsync = findViewById(R.id.btn_updateCardAsync)
         tvResponse = findViewById(R.id.tv_response)
         tvRequest = findViewById(R.id.tv_request)
         btnReset = findViewById(reset)
         btnUpdateCard = findViewById(updateCard)
+        btnSetSectorTrailerKey = findViewById(updateCardKey)
+        btntransmitApdu = findViewById(transmitApdu)
+        btnCancelRequest = findViewById(cancelRequest)
+        eofChk = findViewById(R.id.eofChk)
+        btnPartialRefund = findViewById(partialRefund)
+        btnSendSMS = findViewById(sendSMS)
+        btnPreAuth = findViewById(R.id.btn_pre_auth)
     }
 
     private fun initiatePayment(amountInPaise: Int, orderId: String) {
@@ -196,14 +248,45 @@ class AppInvokeActivity : AppCompatActivity(), View.OnClickListener {
         )
     }
 
-    private fun readCard(manufactureType: String, cardBlockNumber: String? = null, orderId: String) {
-        PaytmPayments.readCloseLoopCard(
+    private fun initiatePartialRefund(orderId: String) {
+        PaytmPayments.doPartialRefund(
+            activity = this,
+            paytmResult = paytmResponseListener,
+            orderId = orderId,
+            extendInfo = extendInfoMap,
+            optionalParams = optionalParamMap, //Optional
+        )
+    }
+
+    private fun sendSMS(orderId: String) {
+        PaytmPayments.sendSMS(
+            activity = this,
+            paytmResult = paytmResponseListener,
+            orderId = orderId,
+            extendInfo = extendInfoMap,
+            optionalParams = optionalParamMap, //Optional
+        )
+    }
+
+    private fun initiatePreAuth(amountInPaise: Int, orderId: String) {
+        PaytmPayments.doPreAuth(
+            activity = this,
+            paytmResult = paytmResponseListener,
+            amountInPaise = amountInPaise,
+            orderId = orderId,
+            optionalParams = optionalParamMap, //Optional
+        )
+    }
+
+    private fun readCard(manufactureType: String, cardBlockNumber: String? = null, orderId: String, isAsyncRequest:Boolean = false): Int {
+        return PaytmPayments.readCloseLoopCard(
             activity = this,
             paytmResult = paytmResponseListener,
             orderId = orderId,
             optionalParams = optionalParamMap, //Optional
             manufactureType = manufactureType,
-            cardBlockNumber = cardBlockNumber
+            cardBlockNumber = cardBlockNumber,
+            isAsyncRequest = isAsyncRequest,
         )
     }
 
@@ -211,16 +294,72 @@ class AppInvokeActivity : AppCompatActivity(), View.OnClickListener {
         manufactureType: String,
         cardData: String,
         cardBlockNumber: String,
-        orderId: String
-    ) {
-        PaytmPayments.updateCloseLoopCard(
+        orderId: String,
+        isAsyncRequest: Boolean = false
+    ): Int {
+        return PaytmPayments.updateCloseLoopCard(
             activity = this,
             paytmResult = paytmResponseListener,
             orderId = orderId,
             optionalParams = optionalParamMap, //Optional
             manufactureType = manufactureType,
             cardData = cardData,
-            cardBlockNumber = cardBlockNumber
+            cardBlockNumber = cardBlockNumber,
+            isAsyncRequest = isAsyncRequest
+        )
+    }
+
+    private fun updateCardKey(
+        manufactureType: String,
+        cardData: String,
+        cardBlockNumber: String,
+        orderId: String,
+        isAsyncRequest: Boolean = false
+    ) {
+        PaytmPayments.updateCardKey(
+            activity = this,
+            paytmResult = paytmResponseListener,
+            orderId = orderId,
+            optionalParams = optionalParamMap, //Optional
+            manufactureType = manufactureType,
+            cardData = cardData,
+            cardBlockNumber = cardBlockNumber,
+            isAsyncRequest = isAsyncRequest
+        )
+    }
+
+    private fun piccCmdExchange(
+        manufactureType: String,
+        cmdData: String,
+        orderId: String,
+        isEof: String,
+        isAsyncRequest: Boolean = false
+    ): Int {
+        return PaytmPayments.piccCmdExchangeCloseLoopCard(
+            activity = this,
+            paytmResult = paytmResponseListener,
+            orderId = orderId,
+            optionalParams = optionalParamMap, //Optional
+            manufactureType = manufactureType,
+            isEof = isEof,
+            cmdData = cmdData,
+            isAsyncRequest = isAsyncRequest
+        )
+    }
+
+    /**
+     * Cancels the most recent async request via the SDK's [PaytmPayments.cancelRequest]. The
+     * outcome (cancelled / declined / not-supported) is reported through [cancelResultListener].
+     */
+    private fun cancelAsyncRequest() {
+        if (lastAsyncRequestId == 0) {
+            Toast.makeText(this, "No async request to cancel", Toast.LENGTH_SHORT).show()
+            return
+        }
+        PaytmPayments.cancelRequest(
+            activity = this,
+            requestId = lastAsyncRequestId,
+            cancelResult = cancelResultListener
         )
     }
 
@@ -235,6 +374,14 @@ class AppInvokeActivity : AppCompatActivity(), View.OnClickListener {
         btnRemoveGst.setOnClickListener(this)
         btnReset.setOnClickListener(this)
         btnUpdateCard.setOnClickListener(this)
+        btnSetSectorTrailerKey.setOnClickListener(this)
+        btnReadCardAsync.setOnClickListener(this)
+        btnUpdateCardAsync.setOnClickListener(this)
+        btntransmitApdu.setOnClickListener(this)
+        btnCancelRequest.setOnClickListener(this)
+        btnPartialRefund.setOnClickListener(this)
+        btnSendSMS.setOnClickListener(this)
+        btnPreAuth.setOnClickListener(this)
 
         payModeGroup.setOnCheckedChangeListener { _, checkedId ->
             selectedPaymode = findViewById<RadioButton>(checkedId).text.toString()
@@ -247,6 +394,8 @@ class AppInvokeActivity : AppCompatActivity(), View.OnClickListener {
         mapGst.setOnCheckedChangeListener { _, checkedId ->
             selectedGst = findViewById<RadioButton>(checkedId).text.toString()
         }
+
+        eofChk.setOnCheckedChangeListener { _, checkedId -> isEof = checkedId }
     }
 
     override fun onClick(v: View?) {
@@ -260,7 +409,7 @@ class AppInvokeActivity : AppCompatActivity(), View.OnClickListener {
         val value = etValue.text.toString()
         val keyGst = etKeyGst.text.toString()
         val valueGst = etValueGst.text.toString()
-
+        startTime = System.currentTimeMillis()
         when (v?.id) {
             payment -> {
 //                initiatePayment(amount, orderId)
@@ -275,8 +424,24 @@ class AppInvokeActivity : AppCompatActivity(), View.OnClickListener {
                 initiateVoid(orderId)
             }
 
+            partialRefund -> {
+                initiatePartialRefund(orderId)
+            }
+
+            sendSMS -> {
+                sendSMS(orderId)
+            }
+
+            preAuth -> {
+                initiatePreAuth(amount, orderId)
+            }
+
             readCard -> {
                 readCard(manufactureType, cardBlockNumber, orderId)
+            }
+
+            readCardAsync -> {
+                lastAsyncRequestId = readCard(manufactureType, cardBlockNumber, orderId, isAsyncRequest = true)
             }
 
             add -> {
@@ -301,6 +466,22 @@ class AppInvokeActivity : AppCompatActivity(), View.OnClickListener {
 
             updateCard -> {
                 updateCard(manufactureType, cardData, cardBlockNumber, orderId)
+            }
+
+            updateCardKey -> {
+                updateCardKey(manufactureType, cardData, cardBlockNumber, orderId)
+            }
+
+            updateCardAsync -> {
+                lastAsyncRequestId = updateCard(manufactureType, cardData, cardBlockNumber, orderId, isAsyncRequest = true)
+            }
+
+            transmitApdu -> {
+                lastAsyncRequestId = piccCmdExchange(manufactureType, cardData, orderId, isEof = isEof.toString(), true)
+            }
+
+            cancelRequest -> {
+                cancelAsyncRequest()
             }
         }
         refreshRequestTv(amount, orderId)
